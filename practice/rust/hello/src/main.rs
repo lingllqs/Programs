@@ -21,7 +21,10 @@ fn main() {
     point.x = 5;
     println!("The point is at ({}, {})", point.x, point.y);
     
-    test();
+    // test();
+    let mut num = 2;
+    test_02(&mut num);
+    println!("num = {}", num);
 }
 
 fn test() {
@@ -47,4 +50,9 @@ fn test() {
 
     let d = c.grow(2.0).area();
     println!("{}", d);
+}
+
+fn test_02(num: &mut i32) {
+    *num = *num * 2;
+    println!("num = {}", num);
 }
