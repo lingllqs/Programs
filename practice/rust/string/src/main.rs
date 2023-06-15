@@ -41,4 +41,15 @@ fn main() {
         Some(s) => println!("{}", s),
         None => println!("not fount"),
     };
+
+    let s = String::from("你好");
+    println!("len of s is {}", s.len());
+
+    let a = String::from("你好世界！");
+    for i in a.bytes() {
+        println!("{}", i);
+    }
+    for i in a.chars() {
+        println!("{}", i);
+    }
 }
