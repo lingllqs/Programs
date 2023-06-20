@@ -1,7 +1,7 @@
 use graphics::math::{add, mul_scalar, Vec2d};
 use piston_window::*;
-use rand::Rng;
 use rand::prelude::*;
+use rand::Rng;
 use std::alloc::{GlobalAlloc, Layout, System};
 use std::time::Instant;
 
@@ -97,7 +97,7 @@ impl World {
     fn remove_shapes(&mut self, n: i32) {
         for _ in 0..n.abs() {
             let mut to_delete = None;
-            
+
             let particle_iter = self.particles.iter().enumerate();
 
             for (i, particle) in particle_iter {
@@ -106,17 +106,17 @@ impl World {
                 }
                 break;
             }
-            
+
             if let Some(i) = to_delete {
                 self.particles.remove(i);
-            }else {
+            } else {
                 self.particles.remove(0);
             };
         }
     }
 
     fn update(&mut self) {
-        let  n = self.rng.gen_range(-3..=3);
+        let n = self.rng.gen_range(-3..=3);
 
         if n > 0 {
             self.add_shapes(n);
@@ -133,9 +133,8 @@ impl World {
 }
 
 fn main() {
-    let (width, height) = (1280.0, 960.0);
-    let mut window: PistonWindow = 
-        WindowSettings::new("particles", [width, height])
+    let (width, height) = (1920.0, 1080.0);
+    let mut window: PistonWindow = WindowSettings::new("particles", [width, height])
         .exit_on_esc(true)
         .build()
         .expect("Could not create a window");
