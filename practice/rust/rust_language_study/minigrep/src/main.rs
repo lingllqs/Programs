@@ -8,7 +8,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     // 解析命令行参数
-    let config = Config::new(&args).unwrap_or_else(|err| {
+    let config = Config::new(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {}", err);
         process::exit(3);
     });
@@ -21,7 +21,6 @@ fn main() {
         process::exit(1);
     }
 }
-
 
 // fn parse_config(args: &[String]) -> Config {
 //     // 匹配项
