@@ -2,41 +2,49 @@
 <html lang="en">
 
 <head>
-  <title></title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/style.css" rel="stylesheet">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <style>
+        table,td{
+            border: 1px solid #00ff00;
+        }
+        table{
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 
 <body>
-  <table border="1" width="500px" height="400px">
-    <tr>
-      <td colspan="2">0,0</td>
-      <!-- <td>0,1</td> -->
-      <td>0,2</td>
-    </tr>
-    <tr>
-      <td>1,0</td>
-      <td colspan="2" rowspan="2">1,1</td>
-      <!-- <td>1,2</td> -->
-    </tr>
-    <tr>
-      <td>2,0</td>
-      <!-- <td>2,1</td> -->
-      <!-- <td>2,2</td> -->
-    </tr>
-  </table>
-  <form>
-    <input type="text">
-    <input type="submit">
-  </form>
-  <form>
-    user: <input type="text" name="user" value="用户">
-    <br>
-    passwd: <input type="password" name="password" value="密码">
-    <br>
-    <input type="submit" name="submit" value="登录">
-  </form>
+    <table border="1" width="500px" height="400px">
+        <tr>
+            <td colspan="2">0,0</td>
+            <!-- <td>0,1</td> -->
+            <td>0,2</td>
+        </tr>
+        <tr>
+            <td>1,0</td>
+            <td colspan="2" rowspan="2">1,1</td>
+            <!-- <td>1,2</td> -->
+        </tr>
+        <tr>
+            <td>2,0</td>
+            <!-- <td>2,1</td> -->
+            <!-- <td>2,2</td> -->
+        </tr>
+    </table>
+    <form>
+        <input type="text">
+        <input type="submit">
+    </form>
+    <form>
+        user: <input type="text" name="user" value="用户">
+        <br>
+        passwd: <input type="password" name="password" value="密码">
+        <br>
+        <input type="submit" name="submit" value="登录">
+    </form>
 </body>
 
 </html>
