@@ -26,5 +26,60 @@ mod my_mod {
         fn private_function() {
             println!("called my_mod::nested::private_function()");
         }
+
+        // pub(in path) 语法定义的函数只能在给定的路径中可见
+        // path 必须是父模块或祖先模块
+        pub(in crate::my_mod) fn public_function_in_my_mod() {
+            print!("called my_mod::nested::public_function_in_my_mod(), that\n >");
+            public_function_in_nested()
+        }
+
+        // self 当前模块可见
+        pub(self) fn public_function_in_nested() {
+            println!("called my_mod::nested::public_function_in_nested");
+        }
+
+        // 父模块可见
+        pub(super) fn public_function_in_super_mod() {
+            println!("called my_mod::nested::public_function_in_super_mod");
+        }
     }
+
+    pub fn call_public_function_in_my_mod() {
+        print!("called `my_mod::call_public_funcion_in_my_mod()`, that\n> ");
+        nested::public_function_in_my_mod();
+        print!("> ");
+        nested::public_function_in_super_mod();
+    }
+
+    // `pub(crate)` 使得函数只在当前 crate 中可见
+    pub(crate) fn public_function_in_crate() {
+        println!("called `my_mod::public_function_in_crate()");
+    }
+
+    // 嵌套模块的可见性遵循相同的规则
+    mod private_nested {
+        #[allow(dead_code)]
+        pub fn function() {
+            println!("called `my_mod::private_nested::function()`");
+        }
+    }
+}
+
+fn function() {
+    println!("called `function()`");
+}
+
+fn main() {
+    // 模块机制消除了相同名字的项之间的歧义。
+    function();
+    my_mod::function();
+
+    // 父模块可访问嵌套模块中的项
+    my_mod::indirect_access();
+    my_mod::nested::function();
+    my_mod::call_public_function_in_my_mod();
+
+    // 同 crate 中可见
+    my_mod::public_function_in_crate();
 }
