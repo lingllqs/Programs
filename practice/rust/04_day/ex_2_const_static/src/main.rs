@@ -1,5 +1,5 @@
 static STATIC_VAL: i32 = 55; // static 需要指定类型
-static mut STATIC_MUT_VAL: i32 = 66;
+static mut STATIC_MUT_VAL: i32 = 66; // static 可变类型
 
 fn main() {
     const SECOND_HOUR: usize = 3600; // const 需要指定类型
