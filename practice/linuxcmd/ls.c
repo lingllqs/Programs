@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     if (argc < 2) {
-        printf("usage: ls directory\n");
+        printf("usage: ls <directory>\n");
         return 0;
     }
 
