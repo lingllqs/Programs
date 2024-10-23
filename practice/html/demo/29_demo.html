@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+    </head>
+    <body>
+        <div>
+            Hello Rust
+        </div>
+        <div>
+            Hello cpp
+        </div>
+        <div class="nav1">
+            nav1
+        </div>
+        <div class="nav2">
+            nav2
+        </div>
+        <div class="nav">
+            nav
+        </div>
+        <div class="nav">
+            nav
+        </div>
+
+        <p id="id1">world</p>
+
+        <script>
+            var divs = document.getElementsByTagName("div")[1];
+            divs.innerHTML = "Hello Python";
+
+            var v1 = document.getElementById("id1");
+            v1.innerHTML = "你好";
+            console.log(v1);
+
+            var nav = document.querySelector(".nav1");
+            console.log(nav);
+            var navs = document.querySelectorAll(".nav");
+            console.log(navs);
+            var navss = document.querySelectorAll(".nav")[1];
+            console.log(navss);
+        </script>
+    
+    </body>
+</html>

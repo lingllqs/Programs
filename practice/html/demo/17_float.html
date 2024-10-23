@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- overflow: hidden; -->
+    <!-- clear: both; -->
+    <style>
+        .container {
+            width: 500px;
+            background-color: #888;
+        }
+
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background-color: red;
+            float: left;
+        }
+
+
+        .text {
+            width: 100px;
+            height: 100px;
+            background-color: #aa3ffe;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+    </div>
+    <div class="text"> </div>
+
+</body>
+
+</html>
