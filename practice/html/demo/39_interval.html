@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById("box");
+        var opacity = 1;
+        var fader = setInterval(function () {
+            if (opacity > 0) {
+                opacity -= 0.05;
+                box.style.opacity = opacity;
+            } else {
+
+                opacity = 1;
+                console.log(new Date().toLocaleTimeString());
+                // clearInterval(fader);
+            }
+        }, 70)
+    </script>
+
+</body>
+
+</html>

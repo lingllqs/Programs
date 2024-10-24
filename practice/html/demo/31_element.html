@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Learning English</title>
+    <meta name="" content="" charset="UTF-8">
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box1 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="root">
+        Rust
+    </div>
+
+    <script>
+        var root = document.getElementById("root");
+        root.id = "Python";
+        root.className = "box box1";
+        root.classList.add("box2");
+        root.classList.remove("box1");
+
+        if (root.classList.contains("box1")) {
+            console.log("yes");
+        } else {
+            console.log("no");
+            root.classList.toggle("box1");
+        }
+
+        var str = '<a href="http://www.baidu.com">百度一下</a>';
+        root.innerHTML = str;
+        // root.innerText = str;
+
+    </script>
+</body>
+
+</html>

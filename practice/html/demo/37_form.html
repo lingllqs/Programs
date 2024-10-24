@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+    <form id="myform">
+        <input type="text">
+        <button id="reset_btn">按钮</button>
+    </form>
+
+    <script>
+        var reset_btn = document.getElementById("reset_btn");
+        var myform = document.getElementById("myform");
+
+        reset_btn.onclick = function () {
+            myform.reset();
+        }
+
+    </script>
+
+</body>
+
+</html>

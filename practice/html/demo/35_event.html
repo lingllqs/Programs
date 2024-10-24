@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+    <style>
+        #root {
+            width: 200px;
+            height: 200px;
+            background-color: #999;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #aaffee;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">button</button>
+    <a href="http://www.baidu.com" id="x">按钮</a>
+
+    <div id="root">
+        <div id="box">
+
+        </div>
+    </div>
+
+    <script>
+        // var btn = document.getElementById("btn");
+        //
+        // btn.addEventListener("click", function (e) {
+        //     console.log(e.target);
+        //     console.log(e.type);
+        // })
+        //
+        // var x = document.getElementById("x");
+        // x.addEventListener("click", function (e) {
+        //     e.preventDefault();
+        //     console.log("点击");
+        // })
+
+
+        var root = document.getElementById("root");
+        var box = document.getElementById("box");
+
+        root.onclick = function(e) {
+            console.log("root");
+        }
+        box.onclick = function(e) {
+            e.stopPropagation(); // 停止事件传播
+            console.log("box");
+        }
+    </script>
+
+</body>
+
+</html>

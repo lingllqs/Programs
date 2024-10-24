@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 8px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #888;
+        }
+
+        h1 {
+            height: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <h1>header</h1>
+        <h1>header</h1>
+        <h1>header</h1>
+        <h1>header</h1>
+        <h1>header</h1>
+
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        console.log(box.clientWidth);
+        console.log(box.clientHeight);
+        console.log(document.documentElement.clientHeight);
+        console.log(document.body.clientHeight);
+        console.log(document.documentElement.scrollTop);
+    </script>
+
+</body>
+
+</html>

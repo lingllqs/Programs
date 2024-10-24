@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        var box = document.getElementById("box");
+
+        box.style.width = "200px";
+        box.style.height = "200px";
+        box.style.backgroundColor = "green";
+
+        box.setAttribute("style", "width:300px;height:300px;background:red");
+        box.style.cssText = "width:100px;height:100px;background:blue;";
+
+        var box_style = document.querySelector("div").style;
+        box_style.width = "500px";
+        box_style.height = "500px";
+        box_style.backgroundColor = "#aaaffe";
+    </script>
+
+</body>
+
+</html>
