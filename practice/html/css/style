@@ -1,0 +1,23 @@
+/*p {*/
+/*    color: #347902;*/
+/*    font-size: 30px;*/
+/*    font-family: "JetBrainsMono Nerd Font";*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*}*/
+/**/
+/*h1 {*/
+/*    color: #aaffee;*/
+/*    background: black;*/
+/*    font-size: 20px;*/
+/*}*/
+/**/
+/*/* class 选择器使用一个圆点来设置 style*/*/
+/*.content {*/
+/*    color: cyan;*/
+/*}*/
+/**/
+/*/*id 选择器使用井号来设置*/*/
+/*#size {*/
+/*    font-size: 80px;*/
+/*}*/
