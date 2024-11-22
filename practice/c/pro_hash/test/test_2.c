@@ -2,7 +2,7 @@
 
 int main()
 {
-    HT *hash_table = ht_new();
+    HashTable *hash_table = ht_new();
     ht_del(hash_table);
 
     return 0;

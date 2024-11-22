@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-static HTItem HT_DELETED_ITEM = {NULL, NULL};
+static HashTableItem HT_DELETED_ITEM = {NULL, NULL};
 
-HTItem *ht_item_new(const char *key, const char *value)
+HashTableItem *ht_item_new(const char *key, const char *value)
 {
-    HTItem *item = malloc(sizeof(HTItem));
+    HashTableItem *item = malloc(sizeof(HashTableItem));
     ERRP(item == NULL, "malloc item error", goto ERR1);
 
     item->key = strdup(key);
@@ -19,14 +19,14 @@ ERR1:
     return NULL;
 }
 
-HT *ht_new()
+HashTable *ht_new()
 {
-    HT *ht_table = malloc(sizeof(HT));
+    HashTable *ht_table = malloc(sizeof(HashTable));
     ERRP(ht_table == NULL, "malloc ht_table", goto ERR1);
 
     ht_table->size = 53;
     ht_table->count = 0;
-    ht_table->items = calloc(sizeof(HTItem *), ht_table->size);
+    ht_table->items = calloc(sizeof(HashTableItem *), ht_table->size);
     ERRP(ht_table->items == NULL, "malloc ht_table->items error", goto ERR2);
 
     return ht_table;
@@ -38,7 +38,7 @@ ERR1:
     return NULL;
 }
 
-void ht_item_del(HTItem *item)
+void ht_item_del(HashTableItem *item)
 {
     if (item)
     {
@@ -48,11 +48,11 @@ void ht_item_del(HTItem *item)
     }
 }
 
-void ht_del(HT *ht)
+void ht_del(HashTable *ht)
 {
     for (int i = 0; i < ht->size; ++i)
     {
-        HTItem *ptr = ht->items[i];
+        HashTableItem *ptr = ht->items[i];
         if (ptr)
         {
             ht_item_del(ptr);
@@ -82,11 +82,11 @@ int ht_hash_get(const char *s, const int num_buckets, const int attempt)
     return (hash_a + (attempt * (hash_b + 1))) % num_buckets;
 }
 
-void ht_insert(HT *ht, const char *key, const char *value)
+void ht_insert(HashTable *ht, const char *key, const char *value)
 {
-    HTItem *item = ht_item_new(key, value);
+    HashTableItem *item = ht_item_new(key, value);
     int index = ht_hash_get(item->key, ht->size, 0);
-    HTItem *cur_item = ht->items[index];
+    HashTableItem *cur_item = ht->items[index];
     int i = 1;
     while (cur_item != NULL)
     {
@@ -107,10 +107,10 @@ void ht_insert(HT *ht, const char *key, const char *value)
     ht->count++;
 }
 
-char *ht_search(HT *ht, const char *key)
+char *ht_search(HashTable *ht, const char *key)
 {
     int index = ht_hash_get(key, ht->size, 0);
-    HTItem *item = ht->items[index];
+    HashTableItem *item = ht->items[index];
     int i = 1;
     while (item != NULL)
     {
@@ -128,10 +128,10 @@ char *ht_search(HT *ht, const char *key)
     return NULL;
 }
 
-void ht_delete(HT *ht, const char *key)
+void ht_delete(HashTable *ht, const char *key)
 {
     int index = ht_hash_get(key, ht->size, 0);
-    HTItem *item = ht->items[index];
+    HashTableItem *item = ht->items[index];
     int i = 1;
     while (item != NULL)
     {
